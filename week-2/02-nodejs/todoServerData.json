@@ -1,0 +1,284 @@
+[
+  {
+    "id": 2,
+    "title": "Go to mandir",
+    "completed": true,
+    "description": "Jay swaminarayan "
+  },
+  {
+    "id": 3,
+    "title": "Read a book",
+    "completed": false,
+    "description": "Choose a novel and read"
+  },
+  {
+    "id": 4,
+    "title": "Exercise",
+    "completed": true,
+    "description": "Go for a jog or hit the gym"
+  },
+  {
+    "id": 5,
+    "title": "Go to suran ",
+    "completed": false,
+    "description": "Jay swaminarayan bapa"
+  },
+  {
+    "id": 6,
+    "title": "Plan weekend activities",
+    "completed": true,
+    "description": "Make plans for the weekend"
+  },
+  {
+    "id": 7,
+    "title": "Write a blog post",
+    "completed": false,
+    "description": "Share thoughts and experiences"
+  },
+  {
+    "id": 8,
+    "title": "Organize desk",
+    "completed": true,
+    "description": "Declutter and organize workspace"
+  },
+  {
+    "id": 9,
+    "title": "Cook a new recipe",
+    "completed": false,
+    "description": "Try out a new dish for dinner"
+  },
+  {
+    "id": 10,
+    "title": "Go to AKDM ",
+    "completed": false,
+    "description": "Jay swaminarayan Maharan, sawami and mukto"
+  },
+  {
+    "id": 11,
+    "title": "Learn a musical instrument",
+    "completed": false,
+    "description": "Start learning to play an instrument"
+  },
+  {
+    "id": 12,
+    "title": "Take a nature walk",
+    "completed": true,
+    "description": "Enjoy the outdoors"
+  },
+  {
+    "id": 13,
+    "title": "Create a to-do list",
+    "completed": false,
+    "description": "Organize tasks for the day"
+  },
+  {
+    "id": 14,
+    "title": "Visit a museum",
+    "completed": true,
+    "description": "Explore art and history"
+  },
+  {
+    "id": 15,
+    "title": "Practice mindfulness",
+    "completed": false,
+    "description": "Meditate for a few minutes"
+  },
+  {
+    "id": 16,
+    "title": "Travel to a new place",
+    "completed": true,
+    "description": "Plan a trip to a new destination"
+  },
+  {
+    "id": 17,
+    "title": "Read tech articles",
+    "completed": false,
+    "description": "Stay updated on technology trends"
+  },
+  {
+    "id": 18,
+    "title": "Learn a programming language",
+    "completed": true,
+    "description": "Start learning a new programming language"
+  },
+  {
+    "id": 19,
+    "title": "Attend a workshop",
+    "completed": false,
+    "description": "Enhance skills through a workshop"
+  },
+  {
+    "id": 21,
+    "title": "Visit a local market",
+    "completed": false,
+    "description": "Explore the local market"
+  },
+  {
+    "id": 22,
+    "title": "Practice yoga",
+    "completed": true,
+    "description": "Incorporate yoga into daily routine"
+  },
+  {
+    "id": 23,
+    "title": "Start a journal",
+    "completed": false,
+    "description": "Document thoughts and experiences"
+  },
+  {
+    "id": 24,
+    "title": "Plant flowers",
+    "completed": true,
+    "description": "Add color to the garden"
+  },
+  {
+    "id": 25,
+    "title": "Cook a healthy meal",
+    "completed": false,
+    "description": "Prepare a nutritious dish"
+  },
+  {
+    "id": 26,
+    "title": "Watch a documentary",
+    "completed": true,
+    "description": "Learn something new through a documentary"
+  },
+  {
+    "id": 27,
+    "title": "Learn photography",
+    "completed": false,
+    "description": "Explore the art of photography"
+  },
+  {
+    "id": 28,
+    "title": "Write a poem",
+    "completed": true,
+    "description": "Express creativity through poetry"
+  },
+  {
+    "id": 29,
+    "title": "Volunteer for a cause",
+    "completed": false,
+    "description": "Contribute to the community"
+  },
+  {
+    "id": 30,
+    "title": "Create a budget",
+    "completed": true,
+    "description": "Manage finances effectively"
+  },
+  {
+    "id": 31,
+    "title": "Explore a new coffee shop",
+    "completed": false,
+    "description": "Discover a new favorite coffee place"
+  },
+  {
+    "id": 32,
+    "title": "Attend a live performance",
+    "completed": true,
+    "description": "Enjoy live music or theater"
+  },
+  {
+    "id": 33,
+    "title": "Learn about astronomy",
+    "completed": false,
+    "description": "Study stars and celestial bodies"
+  },
+  {
+    "id": 34,
+    "title": "Practice a new language",
+    "completed": true,
+    "description": "Learn phrases in a foreign language"
+  },
+  {
+    "id": 35,
+    "title": "Take a cooking class",
+    "completed": false,
+    "description": "Improve culinary skills"
+  },
+  {
+    "id": 36,
+    "title": "Write a short story",
+    "completed": true,
+    "description": "Create a fictional narrative"
+  },
+  {
+    "id": 37,
+    "title": "Visit an art gallery",
+    "completed": false,
+    "description": "Appreciate various forms of art"
+  },
+  {
+    "id": 38,
+    "title": "Try a new workout routine",
+    "completed": true,
+    "description": "Switch up the exercise routine"
+  },
+  {
+    "id": 39,
+    "title": "Learn about sustainable living",
+    "completed": false,
+    "description": "Explore eco-friendly practices"
+  },
+  {
+    "id": 40,
+    "title": "Build a birdhouse",
+    "completed": true,
+    "description": "Engage in a DIY project"
+  },
+  {
+    "id": 41,
+    "title": "Go on a bike ride",
+    "completed": false,
+    "description": "Enjoy the outdoors on a bike"
+  },
+  {
+    "id": 42,
+    "title": "Learn to dance",
+    "completed": true,
+    "description": "Take dance lessons"
+  },
+  {
+    "id": 43,
+    "title": "Create digital art",
+    "completed": false,
+    "description": "Experiment with digital artistic creations"
+  },
+  {
+    "id": 44,
+    "title": "Try a new type of cuisine",
+    "completed": true,
+    "description": "Explore diverse culinary options"
+  },
+  {
+    "id": 45,
+    "title": "Write a letter to future self",
+    "completed": false,
+    "description": "Reflect on personal goals"
+  },
+  {
+    "id": 46,
+    "title": "Visit a botanical garden",
+    "completed": true,
+    "description": "Experience the beauty of plants"
+  },
+  {
+    "id": 47,
+    "title": "Learn about history",
+    "completed": false,
+    "description": "Study historical events"
+  },
+  {
+    "id": 48,
+    "title": "Take a pottery class",
+    "completed": true,
+    "description": "Create pottery pieces"
+  },
+  {
+    "id": 49,
+    "title": "Practice drawing",
+    "completed": false,
+    "description": "Improve artistic drawing skills"
+  }
+]

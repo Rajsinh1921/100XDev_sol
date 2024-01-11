@@ -39,11 +39,110 @@
 
   Testing the server - run `npm run test-todoServer` command in terminal
  */
-  const express = require('express');
-  const bodyParser = require('body-parser');
-  
-  const app = express();
-  
-  app.use(bodyParser.json());
-  
-  module.exports = app;
+
+const express = require("express");
+const fs = require("fs");
+const path = require("path");
+const bodyParser = require("body-parser");
+const app = express();
+const todosFromFile = require("./todoServerData.json");
+
+const port = 3001;
+const filePath = path.join(__dirname, "./todoServerData.json");
+app.use(bodyParser.json());
+
+app.get("/todos", (req, res) => {
+  fs.readFile(filePath, "utf-8", (err, file) => {
+    if (err) {
+      return res.status(404).json({ err: "Data not found" });
+    }
+    res.status(200).json(file);
+  });
+});
+
+app.post("/todos", (req, res) => {
+  const body = req.body;
+  todosFromFile.push({ id: todosFromFile.length + 1, ...body });
+  fs.writeFile(filePath, JSON.stringify(todosFromFile), (err, data) => {
+    if (err) {
+      throw err;
+    }
+    console.log(`Todo file updated ${todosFromFile.length}`);
+    res.status(200).send(`Recived the data and the id is ${body.id}`);
+  });
+});
+
+app
+  .route("/todos/:id")
+  .get((req, res) => {
+    const id = req.params.id;
+    let indexOfTodo = todosFromFile.findIndex((todo) => todo.id == id);
+
+    if (indexOfTodo === -1) {
+      return res.status(404).json({ err: "Data not found" });
+    }
+
+    fs.readFile(filePath, "utf-8", (err, file) => {
+      const todos = JSON.parse(file);
+
+      const todo = todos.find((todo) => todo.id == id);
+
+      if (err || !todo) {
+        return res.status(404).json({ err: "Data not found" });
+      }
+      res.status(200).json(todo);
+    });
+  })
+  .put((req, res) => {
+    const id = req.params.id;
+
+    let indexOfTodo = todosFromFile.findIndex((todo) => todo.id == id);
+
+    if (indexOfTodo === -1) {
+      return res.status(404).json({ err: "Data not found" });
+    }
+    const body = req.body;
+
+    todosFromFile.splice(indexOfTodo, 1, {
+      id: Number(id),
+      title: body.title,
+      completed: body.completed,
+      description: body.description,
+    });
+    fs.writeFile(filePath, JSON.stringify(todosFromFile), (err, data) => {
+      if (err) {
+        throw err;
+      }
+      console.log(`Updated Todo ${todosFromFile[indexOfTodo]}`);
+      res.status(200).send(`Recived the data and the id is ${id}`);
+    });
+  })
+  .delete((req, res) => {
+    const id = req.params.id;
+
+    let indexToRemove = todosFromFile.findIndex((todo) => todo.id == id);
+
+    if (indexToRemove === -1) {
+      return res.status(404).json({ err: "Data not found" });
+    }
+
+    todosFromFile.splice(indexToRemove, 1);
+
+    fs.writeFile(filePath, JSON.stringify(todosFromFile), (err) => {
+      if (err) {
+        throw err;
+      }
+      console.log(`Todo file updated ${todosFromFile.length}`);
+      res.status(200).send(`deleted the todo with the id of ${id}`);
+    });
+  });
+
+app.all("*", (err, res) => {
+  res.status(404).send("Route not found");
+});
+
+app.listen(port, () => {
+  console.log(`App is listening on port ${port}`);
+});
+
+module.exports = app;
