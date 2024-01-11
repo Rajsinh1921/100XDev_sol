@@ -6,11 +6,11 @@ const contenet = fs.readFile("./a.txt", "utf-8", (err, data) => {
     throw err;
   }
   console.log(data);
-});
 
-const content = ", Jay Swaminarayan";
-fs.appendFile("./a.txt", content, (err) => {
-  if (err) {
-    console.error(err);
-  }
+  const content = ", Jay Swaminarayan";
+  fs.appendFile("./a.txt", content, (err) => {
+    if (err) {
+      console.error(err);
+    }
+  });
 });
