@@ -56,7 +56,7 @@ app.get("/todos", (req, res) => {
     if (err) {
       return res.status(404).json({ err: "Data not found" });
     }
-    res.status(200).json(file);
+    res.status(200).json(JSON.parse(file));
   });
 });
 
@@ -68,7 +68,7 @@ app.post("/todos", (req, res) => {
       throw err;
     }
     console.log(`Todo file updated ${todosFromFile.length}`);
-    res.status(200).send(`Recived the data and the id is ${body.id}`);
+    res.status(201).json(`Recived the data and the id is ${body.id}`);
   });
 });
 
@@ -76,22 +76,13 @@ app
   .route("/todos/:id")
   .get((req, res) => {
     const id = req.params.id;
-    let indexOfTodo = todosFromFile.findIndex((todo) => todo.id == id);
+    let requestedTodo = todosFromFile.find((todo) => todo.id == id);
 
-    if (indexOfTodo === -1) {
+    if (!requestedTodo) {
       return res.status(404).json({ err: "Data not found" });
     }
-
-    fs.readFile(filePath, "utf-8", (err, file) => {
-      const todos = JSON.parse(file);
-
-      const todo = todos.find((todo) => todo.id == id);
-
-      if (err || !todo) {
-        return res.status(404).json({ err: "Data not found" });
-      }
-      res.status(200).json(todo);
-    });
+    console.log(requestedTodo);
+    res.status(200).json(requestedTodo);
   })
   .put((req, res) => {
     const id = req.params.id;
@@ -109,12 +100,12 @@ app
       completed: body.completed,
       description: body.description,
     });
-    fs.writeFile(filePath, JSON.stringify(todosFromFile), (err, data) => {
+    fs.writeFile(filePath, JSON.stringify(todosFromFile), (err) => {
       if (err) {
         throw err;
       }
       console.log(`Updated Todo ${todosFromFile[indexOfTodo]}`);
-      res.status(200).send(`Recived the data and the id is ${id}`);
+      res.status(201).send(`Recived the data and the id is ${id}`);
     });
   })
   .delete((req, res) => {
