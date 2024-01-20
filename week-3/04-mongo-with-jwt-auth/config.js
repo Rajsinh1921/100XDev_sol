@@ -1,3 +1,3 @@
 module.exports = {
-  JWT_KET: "kesav",
+  JWT_KEY: "kesav",
 };

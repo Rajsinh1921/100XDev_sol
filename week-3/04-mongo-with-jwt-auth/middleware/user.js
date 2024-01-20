@@ -1,6 +1,20 @@
+const jwt = require("jsonwebtoken");
+const { JWT_KEY } = require("../config");
+
 function userMiddleware(req, res, next) {
-    // Implement user auth logic
-    // You need to check the headers and validate the user from the user DB. Check readme for the exact headers to be expected
+  const token = req.headers.authentication;
+  const words = token.split(" ");
+  const jwtToken = words[1];
+  const decodeValue = jwt.verify(jwtToken, JWT_KEY);
+
+  if (decodeValue.username) {
+    req.username = decodeValue.username;
+    next();
+  } else {
+    res.status(404).json({
+      msg: "You are not authentication",
+    });
+  }
 }
 
 module.exports = userMiddleware;

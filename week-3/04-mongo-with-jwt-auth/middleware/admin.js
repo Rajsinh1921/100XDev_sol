@@ -1,11 +1,11 @@
-const { JWT_KET } = require("../config");
+const { JWT_KEY } = require("../config");
 const jwt = require("jsonwebtoken");
 
 function adminMiddleware(req, res, next) {
   const token = req.headers.authentication;
   const words = token.split(" ");
   const jwtToken = words[1];
-  const decodeValue = jwt.verify(jwtToken, JWT_KET);
+  const decodeValue = jwt.verify(jwtToken, JWT_KEY);
 
   if (decodeValue.username) {
     next();

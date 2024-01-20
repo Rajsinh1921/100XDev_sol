@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const adminMiddleware = require("../middleware/admin");
 const { Admin, Course } = require("../../03-mongo/db");
-const { JWT_KET } = require("../config");
+const { JWT_KEY } = require("../config");
 const router = Router();
 const jwt = require("jsonwebtoken");
 // Admin Routes
@@ -28,7 +28,7 @@ router.post("/signin", async (req, res) => {
   });
 
   if (admin) {
-    const newToken = jwt.sign({ username }, JWT_KET);
+    const newToken = jwt.sign({ username }, JWT_KEY);
     res.status(200).json({ newToken });
   } else {
     res.status(411).json({ msg: "Wrong email and password" });
